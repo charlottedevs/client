@@ -1,8 +1,8 @@
-import people from './people-reducer.js';
+import credits from './credits-reducer.js';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-  people
+  credits
 });
 
 export default rootReducer;
