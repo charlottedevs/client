@@ -1,9 +1,15 @@
-import * as types from '../actions/action-types';
+import {
+  FETCH_CREDITS,
+} from '../actions/action-types';
 
-export default (state = [], action) => {
+const INITIAL_STATE = {
+  credits: []
+}
+
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.ADD_CREDIT:
-      return [...state, Object.assign({}, action.credit)];
+    case FETCH_CREDITS:
+      return { ...state, credits: action.payload };
     default:
       return state;
   }

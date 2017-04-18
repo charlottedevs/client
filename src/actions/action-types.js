@@ -1,1 +1,2 @@
-export const ADD_CREDIT = 'ADD_CREDIT';
+export const FETCH_CREDITS = 'FETCH_CREDITS';
+export const NETWORK_ERROR = 'NETWORK_ERROR';
