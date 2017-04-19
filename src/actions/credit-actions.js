@@ -10,7 +10,7 @@ export const fetchCredits = () => {
   const apiUrl = process.env.API_URL
   const creditsUrl = `${apiUrl}/credits`;
 
-  const jwt = process.env.API_TOKEN
+  const jwt = window.localStorage.getItem("auth_token")
   const authHeaders = { 'Authorization': 'Bearer ' + jwt };
   const requestConfig = {
     url: creditsUrl,
@@ -35,7 +35,7 @@ export const createEvent = params => {
   const apiUrl = process.env.API_URL
   const creditsUrl = `${apiUrl}/events`;
 
-  const jwt = process.env.API_TOKEN
+  const jwt = window.localStorage.getItem("auth_token")
   const authHeaders = { 'Authorization': 'Bearer ' + jwt };
   const requestConfig = {
     method: 'post',

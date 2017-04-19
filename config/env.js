@@ -22,7 +22,7 @@ function getClientEnvironment(publicUrl) {
       // images into the `src` and `import` them in code to get their paths.
       'PUBLIC_URL': publicUrl,
       'API_URL': process.env.API_URL,
-      'API_TOKEN': process.env.API_TOKEN
+      'GOOGLE_CLIENT_ID': process.env.GOOGLE_CLIENT_ID
     });
   // Stringify all values so we can feed into Webpack DefinePlugin
   var stringified = {
