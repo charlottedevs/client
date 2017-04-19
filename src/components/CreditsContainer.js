@@ -1,5 +1,5 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
 import * as creditActions from '../actions/credit-actions';
 import CreditsList from './CreditsList';
 import CreditInput from './CreditInput';
@@ -9,12 +9,12 @@ class CreditsContainer extends Component {
     super(props);
 
     this.state = {
-      selectedCredit: 'foo'
-    }
+      selectedCredit: 'foo',
+    };
   }
 
   componentDidMount() {
-    this.props.fetchCredits()
+    this.props.fetchCredits();
   }
 
   render() {
@@ -24,18 +24,21 @@ class CreditsContainer extends Component {
     return (
       <div>
         <CreditsList credits={credits} selectCredit={this.props.selectCredit} />
-        <CreditInput selectedCredit={selectedCredit}/>
+        <CreditInput selectedCredit={selectedCredit} />
       </div>
     );
   }
 }
 
 CreditsContainer.propTypes = {
-  credits: PropTypes.array.isRequired,
+  credits: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  selectedCredit: PropTypes.shape.isRequired,
+  fetchCredits: PropTypes.func.isRequired,
+  selectCredit: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
-  return state.credits ;
+  return state.credits;
 }
 
 

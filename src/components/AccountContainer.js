@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
 import GoogleLogin from 'react-google-login';
 import * as accountActions from '../actions/account-actions';
 
@@ -7,12 +7,12 @@ class AccountContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.handleGoogleResponse = this.handleGoogleResponse.bind(this)
+    this.handleGoogleResponse = this.handleGoogleResponse.bind(this);
   }
 
   handleGoogleResponse(response) {
     const tokenId = response.tokenId;
-    this.props.createSession(tokenId)
+    this.props.createSession(tokenId);
   }
 
   render() {
@@ -27,5 +27,8 @@ class AccountContainer extends Component {
   }
 }
 
+AccountContainer.propTypes = {
+  createSession: PropTypes.func.isRequired,
+};
 
 export default connect(null, accountActions)(AccountContainer);

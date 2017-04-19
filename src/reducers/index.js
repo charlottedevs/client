@@ -1,10 +1,10 @@
-import credits from './credits-reducer.js';
-import account from './account-reducer.js';
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
+import credits from './credits-reducer';
+import account from './account-reducer';
 
 const rootReducer = combineReducers({
   credits,
-  account
+  account,
 });
 
 export default rootReducer;

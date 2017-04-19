@@ -2,8 +2,8 @@ import * as types from '../actions/action-types';
 
 const INITIAL_STATE = {
   credits: [],
-  selectedCredit: {}
-}
+  selectedCredit: {},
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {

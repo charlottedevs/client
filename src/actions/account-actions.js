@@ -4,19 +4,21 @@ import {
   NETWORK_ERROR,
 } from './action-types';
 
-export const createSession = (jwt) => {
-  const apiUrl = process.env.API_URL
+const createSession = (jwt) => {
+  const apiUrl = process.env.API_URL;
   const sessionUrl = `${apiUrl}/session`;
-  const authHeaders = { 'Authorization': 'Bearer ' + jwt };
+  const authHeaders = { Authorization: `Bearer ${jwt}` };
   const requestConfig = {
     method: 'post',
     url: sessionUrl,
-    headers: authHeaders
-  }
+    headers: authHeaders,
+  };
 
   return (dispatch) => {
     axios(requestConfig)
-      .then(response => dispatch({type: CREATE_SESSION, payload: response.data.token}))
-      .catch(error => dispatch({type: NETWORK_ERROR, payload: error}))
-  }
-}
+      .then(response => dispatch({ type: CREATE_SESSION, payload: response.data.token }))
+      .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
+  };
+};
+
+export default createSession;
