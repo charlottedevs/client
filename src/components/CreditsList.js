@@ -25,11 +25,15 @@ import Credit from './Credit';
 //   }
 // ]
 
-const CreditsList = ({credits}) => {
+const CreditsList = ({credits, selectCredit}) => {
   return (
     <div>
       {credits.map((credit) =>
-        <Credit key={credit.id} credit={credit} />
+        <Credit
+          key={credit.id}
+          credit={credit}
+          selectCredit={selectCredit}
+        />
       )}
     </div>
   );

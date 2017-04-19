@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 
-const Credit = ({credit}) => {
+const Credit = ({credit, selectCredit}) => {
   return (
-    <div>
+    <div onClick={() => selectCredit(credit)}>
       <h3>{credit.title}</h3>
       <code>{credit.points}</code>
       <p>{credit.description}</p>

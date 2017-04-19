@@ -1,2 +1,4 @@
 export const FETCH_CREDITS = 'FETCH_CREDITS';
 export const NETWORK_ERROR = 'NETWORK_ERROR';
+export const SELECT_CREDIT = 'SELECT_CREDIT';
+export const CREATE_EVENT = 'CREATE_EVENT';
