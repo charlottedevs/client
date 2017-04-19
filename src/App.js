@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CreditsContainer from './components/CreditsContainer'
+import AccountContainer from './components/AccountContainer'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <h2><code>Steps for Code Cred</code></h2>
         </div>
        <CreditsContainer />
+       <AccountContainer />
       </div>
     );
   }
