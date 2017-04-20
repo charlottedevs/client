@@ -1,13 +1,13 @@
 import * as types from '../actions/action-types';
 
-
 const storeJWTToken = (token, state) => {
   window.localStorage.setItem('auth_token', token);
-  return state;
+  const foo = { ...state, isAuthenticated: true };
+  return foo;
 };
 
 const INITIAL_STATE = {
-  authorized: false,
+  isAuthenticated: false,
 };
 
 export default (state = INITIAL_STATE, action) => {

@@ -4,7 +4,7 @@ import {
   NETWORK_ERROR,
 } from './action-types';
 
-const createSession = (jwt) => {
+export const createSession = (jwt) => {
   const apiUrl = process.env.API_URL;
   const sessionUrl = `${apiUrl}/session`;
   const authHeaders = { Authorization: `Bearer ${jwt}` };
@@ -21,4 +21,3 @@ const createSession = (jwt) => {
   };
 };
 
-export default createSession;

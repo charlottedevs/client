@@ -32,9 +32,17 @@ class CreditsContainer extends Component {
 
 CreditsContainer.propTypes = {
   credits: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  selectedCredit: PropTypes.shape.isRequired,
+  selectedCredit: PropTypes.shape({
+    title: PropTypes.string,
+    points: PropTypes.number,
+    description: PropTypes.string,
+  }),
   fetchCredits: PropTypes.func.isRequired,
   selectCredit: PropTypes.func.isRequired,
+};
+
+CreditsContainer.defaultProps = {
+  selectedCredit: {},
 };
 
 function mapStateToProps(state) {

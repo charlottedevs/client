@@ -17,18 +17,31 @@ class AccountContainer extends Component {
 
   render() {
     return (
-      <GoogleLogin
-        clientId={process.env.GOOGLE_CLIENT_ID}
-        buttonText="Login"
-        onSuccess={this.handleGoogleResponse}
-        onFailure={this.handleGoogleResponse}
-      />
+      <div>
+        <h3>{ this.props.isAuthenticated && "Yay you're authenticated" }</h3>
+        <GoogleLogin
+          clientId={process.env.GOOGLE_CLIENT_ID}
+          buttonText="Login"
+          onSuccess={this.handleGoogleResponse}
+          onFailure={this.handleGoogleResponse}
+        />
+      </div>
     );
   }
 }
 
 AccountContainer.propTypes = {
   createSession: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
-export default connect(null, accountActions)(AccountContainer);
+AccountContainer.defaultProps = {
+  isAuthenticated: false,
+};
+
+const mapStateToProps = state => (
+  { isAuthenticated: state.accounts.isAuthenticated }
+);
+
+
+export default connect(mapStateToProps, accountActions)(AccountContainer);

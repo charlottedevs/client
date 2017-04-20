@@ -33,9 +33,8 @@ class CreditInput extends Component {
 
   handleInfoChange(e) {
     this.setState(
-      { eventInfo: {
-        url: e.target.value,
-      },
+      {
+        eventInfo: { url: e.target.value },
       },
     );
   }
@@ -47,16 +46,29 @@ class CreditInput extends Component {
         <hr />
         <p>{selectedCredit.title}</p>
         <p>{selectedCredit.points}</p>
-        <input id="url" type="text" placeholder="url" onChange={this.handleInfoChange} />
-        <button className="btn btn-primary" onClick={this.onSubmitEventClick}>Submit</button>
+        <input
+          id="url" type="text" placeholder="url" onChange={this.handleInfoChange}
+        />
+        <button
+          className="btn btn-primary" onClick={this.onSubmitEventClick}
+        >
+          Submit
+        </button>
       </div>
     );
   }
 }
 
 CreditInput.propTypes = {
-  selectedCredit: PropTypes.shape.isRequired,
+  selectedCredit: PropTypes.shape({
+    title: PropTypes.string,
+    points: PropTypes.number,
+    description: PropTypes.string,
+  }),
   createEvent: PropTypes.func.isRequired,
 };
 
+CreditInput.defaultProps = {
+  selectedCredit: {},
+};
 export default connect(null, creditActions)(CreditInput);

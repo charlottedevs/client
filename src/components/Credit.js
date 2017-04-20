@@ -5,13 +5,20 @@ const Credit = ({ credit, selectCredit }) => (
     <h3>{credit.title}</h3>
     <code>{credit.points}</code>
     <p>{credit.description}</p>
-    <button onClick={selectCredit(credit)}>Submit</button>
+    <button onClick={() => selectCredit(credit)}>Submit</button>
   </div>
   );
 
 Credit.propTypes = {
-  credit: PropTypes.shape.isRequired,
+  credit: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    points: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
   selectCredit: PropTypes.func.isRequired,
 };
 
+Credit.defaultProps = {
+  credit: {},
+};
 export default Credit;
