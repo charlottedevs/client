@@ -7,7 +7,7 @@ const storeJWTToken = (token, state) => {
 };
 
 const INITIAL_STATE = {
-  isAuthenticated: false,
+  isAuthenticated: window.localStorage.getItem('auth_token') !== null,
 };
 
 export default (state = INITIAL_STATE, action) => {
