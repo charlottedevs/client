@@ -1,11 +1,19 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Account from '../components/Account';
+import bigolcrown from '../assets/images/bigolcrown.png';
 
 const HeaderContainer = props => (
   <nav className="navbar">
-    <a className="navbar-brand" href="www.google.com">Charlotte Junior Devs</a>
-    <Account picture={props.picture} credibility={props.credibility} />
+    <div className="row">
+      <div className="col-md-6 align-items-center">
+        <img className="crown" src={bigolcrown} alt="crown" />
+        <a className="navbar-brand" href="www.google.com">Charlotte Junior Devs</a>
+      </div>
+      <div className="col-md-6">
+        <Account picture={props.picture} credibility={props.credibility} />
+      </div>
+    </div>
   </nav>
 );
 

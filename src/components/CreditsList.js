@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Credit from './Credit';
 
 const CreditsList = ({ credits, selectCredit }) => (
-  <div>
+  <div className="row">
     {credits.map(credit =>
       <Credit
         key={credit.id}

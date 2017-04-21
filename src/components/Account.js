@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 
 const Account = ({ picture, credibility }) => (
   <div>
-    <img src={picture} alt="" />
-    <p>{credibility}</p>
+    <img className="profilePic" src={picture} alt="" />
+    <p className="credibility">{credibility}</p>
   </div>
 );
 
