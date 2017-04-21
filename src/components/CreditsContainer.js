@@ -14,7 +14,9 @@ class CreditsContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchCredits();
+    if (this.props.isAuthenticated) {
+      this.props.fetchCredits();
+    }
   }
 
   render() {
@@ -39,6 +41,7 @@ CreditsContainer.propTypes = {
   }),
   fetchCredits: PropTypes.func.isRequired,
   selectCredit: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
 };
 
 CreditsContainer.defaultProps = {
@@ -46,7 +49,10 @@ CreditsContainer.defaultProps = {
 };
 
 function mapStateToProps(state) {
-  return state.credits;
+  return {
+    credits: state.credits.credits,
+    isAuthenticated: state.accounts.isAuthenticated,
+  };
 }
 
 
