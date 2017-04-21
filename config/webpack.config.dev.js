@@ -81,7 +81,7 @@ module.exports = {
       'react-native': 'react-native-web'
     }
   },
-  
+
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
@@ -112,6 +112,7 @@ module.exports = {
           // https://github.com/facebookincubator/create-react-app/issues/1713
           /\.(js|jsx)(\?.*)?$/,
           /\.css$/,
+          /\.sass$/,
           /\.json$/,
           /\.svg$/
         ],
@@ -121,13 +122,18 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
+      {
+        test: /\.sass$/,
+        include: paths.appSrc,
+        loaders: ["style", "css", "sass"]
+      },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
         loader: 'babel',
         query: {
-          
+
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
@@ -161,7 +167,7 @@ module.exports = {
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ]
   },
-  
+
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [
