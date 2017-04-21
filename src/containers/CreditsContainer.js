@@ -24,10 +24,12 @@ class CreditsContainer extends Component {
     const selectedCredit = this.props.selectedCredit;
 
     return (
-      <div>
+      <div className="jumbotron">
+        <h2>Challenges</h2>
         <CreditsList credits={credits} selectCredit={this.props.selectCredit} />
         <CreditInput selectedCredit={selectedCredit} />
       </div>
+
     );
   }
 }

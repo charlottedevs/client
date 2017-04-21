@@ -5,7 +5,7 @@ const Credit = ({ credit, selectCredit }) => (
     <h3>{credit.title}</h3>
     <code>{credit.points}</code>
     <p>{credit.description}</p>
-    <button onClick={() => selectCredit(credit)}>Submit</button>
+    <button className="btn btn-primary" onClick={() => selectCredit(credit)}>Submit</button>
   </div>
   );
 

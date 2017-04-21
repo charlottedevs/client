@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import Account from '../components/Account';
 
 const HeaderContainer = props => (
-  <div className="App-header jumbotron">
-    <h2><code>Steps for Code Cred</code></h2>
+  <nav className="navbar">
+    <a className="navbar-brand" href="www.google.com">Charlotte Junior Devs</a>
     <Account picture={props.picture} credibility={props.credibility} />
-  </div>
+  </nav>
 );
 
 function mapStateToProps(state) {
