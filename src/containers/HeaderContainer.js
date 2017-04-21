@@ -1,12 +1,20 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Account from '../components/Account';
+import bigolcrown from '../assets/images/bigolcrown.png';
 
 const HeaderContainer = props => (
-  <div className="App-header jumbotron">
-    <h2><code>Steps for Code Cred</code></h2>
-    <Account picture={props.picture} credibility={props.credibility} />
-  </div>
+  <nav className="navbar">
+    <div className="row">
+      <div className="col-md-6 align-items-center">
+        <img className="crown" src={bigolcrown} alt="crown" />
+        <a className="navbar-brand" href="www.google.com">Charlotte Junior Devs</a>
+      </div>
+      <div className="col-md-6">
+        <Account picture={props.picture} credibility={props.credibility} />
+      </div>
+    </div>
+  </nav>
 );
 
 function mapStateToProps(state) {

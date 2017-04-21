@@ -1,11 +1,21 @@
 import React, { PropTypes } from 'react';
 
 const Credit = ({ credit, selectCredit }) => (
-  <div>
-    <h3>{credit.title}</h3>
-    <code>{credit.points}</code>
-    <p>{credit.description}</p>
-    <button onClick={() => selectCredit(credit)}>Submit</button>
+  <div className="col-md-4">
+    <div className="card">
+      <div className="card-header">
+        <p className="points">{credit.points}<span>pts</span></p>
+        <h3>{credit.title}</h3>
+      </div>
+      <div className="card-block">
+        <p>{credit.description}</p>
+      </div>
+      <div className="card-footer">
+        <button className="btn btn-secondary" onClick={() => selectCredit(credit)}>
+          More Info
+        </button>
+      </div>
+    </div>
   </div>
   );
 
