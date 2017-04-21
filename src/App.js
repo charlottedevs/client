@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.sass';
+import HeaderContainer from './containers/HeaderContainer';
 import ContentContainer from './containers/ContentContainer';
+import FooterContainer from './containers/FooterContainer';
 
 const App = () => (
   <div className="App">
-    <div className="App-header jumbotron">
-      <h2><code>Steps for Code Cred</code></h2>
-    </div>
+    <HeaderContainer />
     <ContentContainer />
+    <FooterContainer />
   </div>
 );
 
