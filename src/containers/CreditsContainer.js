@@ -51,7 +51,7 @@ CreditsContainer.defaultProps = {
 function mapStateToProps(state) {
   return {
     credits: state.credits.credits,
-    isAuthenticated: state.accounts.isAuthenticated,
+    isAuthenticated: state.account.isAuthenticated,
   };
 }
 

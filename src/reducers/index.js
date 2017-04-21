@@ -4,7 +4,7 @@ import accountReducer from './account-reducer';
 
 const rootReducer = combineReducers({
   credits: creditsReducer,
-  accounts: accountReducer,
+  account: accountReducer,
 });
 
 export default rootReducer;

@@ -16,7 +16,7 @@ export const createSession = (jwt) => {
 
   return (dispatch) => {
     axios(requestConfig)
-      .then(response => dispatch({ type: CREATE_SESSION, payload: response.data.token }))
+      .then(response => dispatch({ type: CREATE_SESSION, payload: response.data.user_info }))
       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
   };
 };
