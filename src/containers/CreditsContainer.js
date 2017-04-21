@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import * as creditActions from '../actions/credit-actions';
-import CreditsList from './CreditsList';
-import CreditInput from './CreditInput';
+import CreditsList from '../components/CreditsList';
+import CreditInput from '../components/CreditInput';
 
 class CreditsContainer extends Component {
   constructor(props) {
