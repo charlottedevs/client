@@ -9,7 +9,7 @@ const ContentContainer = props => (
 
 function mapStateToProps(state) {
   return {
-    isAuthenticated: state.accounts.isAuthenticated,
+    isAuthenticated: state.account.isAuthenticated,
   };
 }
 
