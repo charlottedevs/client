@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import GoogleLogin from 'react-google-login';
 import * as accountActions from '../actions/account-actions';
 
-class AccountContainer extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -18,7 +18,7 @@ class AccountContainer extends Component {
   render() {
     return (
       <div>
-        <h3>{ this.props.isAuthenticated && "Yay you're authenticated" }</h3>
+        <h3>Please log in</h3>
         <GoogleLogin
           clientId={process.env.GOOGLE_CLIENT_ID}
           buttonText="Login"
@@ -30,18 +30,8 @@ class AccountContainer extends Component {
   }
 }
 
-AccountContainer.propTypes = {
+Login.propTypes = {
   createSession: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
 };
 
-AccountContainer.defaultProps = {
-  isAuthenticated: false,
-};
-
-const mapStateToProps = state => (
-  { isAuthenticated: state.accounts.isAuthenticated }
-);
-
-
-export default connect(mapStateToProps, accountActions)(AccountContainer);
+export default connect(null, accountActions)(Login);
