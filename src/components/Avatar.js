@@ -1,19 +1,19 @@
 import React, { PropTypes } from 'react';
 
-const Account = ({ picture, credibility }) => (
+const Avatar = ({ picture, credibility }) => (
   <div>
     <img className="profilePic" src={picture} alt="" />
     <p className="credibility">{credibility}</p>
   </div>
 );
 
-Account.propTypes = {
+Avatar.propTypes = {
   picture: PropTypes.string.isRequired,
   credibility: PropTypes.number,
 };
 
-Account.defaultProps = {
+Avatar.defaultProps = {
   credibility: null,
 };
 
-export default Account;
+export default Avatar;
