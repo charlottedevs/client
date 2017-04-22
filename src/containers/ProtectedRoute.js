@@ -5,8 +5,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-// eslint-disable-next-line
-const ProtectedRoute = ({ ...props, component: Component }) => {
+const ProtectedRoute = (props) => {
   if (props.isAuthenticated) {
     return (<Route {...props} />);
   }

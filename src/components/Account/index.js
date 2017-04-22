@@ -35,8 +35,8 @@ const Account = () => (
 
       <FormGroup controlId="formHorizontalStackOverflowUrl">
         <Col componentClass={ControlLabel} sm={2}>
-            Stack Overflow Profile Url
-          </Col>
+          Stack Overflow Profile Url
+        </Col>
         <Col sm={10}>
           <FormControl type="text" placeholder="https://stackoverflow.com/users/..." />
         </Col>
@@ -53,8 +53,8 @@ const Account = () => (
 
       <FormGroup controlId="formHorizontalGithubHandle">
         <Col componentClass={ControlLabel} sm={2}>
-    GitHub Handle
-  </Col>
+          GitHub Handle
+        </Col>
         <Col sm={10}>
           <FormControl type="text" placeholder="your github @handle" />
         </Col>
@@ -62,8 +62,8 @@ const Account = () => (
 
       <FormGroup controlId="formHorizontalCodewarsHandle">
         <Col componentClass={ControlLabel} sm={2}>
-    Codewars Handle
-  </Col>
+          Codewars Handle
+        </Col>
         <Col sm={10}>
           <FormControl type="text" placeholder="your codewars @handle" />
         </Col>
@@ -72,8 +72,8 @@ const Account = () => (
       <FormGroup>
         <Col smOffset={2} sm={10}>
           <Button type="submit">
-      Save
-    </Button>
+            Save
+          </Button>
         </Col>
       </FormGroup>
     </Form>
