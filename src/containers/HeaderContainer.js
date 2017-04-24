@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Account from '../components/Account';
+import Avatar from '../components/Avatar';
 import bigolcrown from '../assets/images/bigolcrown.png';
 
 const HeaderContainer = props => (
@@ -11,7 +11,7 @@ const HeaderContainer = props => (
         <a className="navbar-brand" href="www.google.com">Charlotte Junior Devs</a>
       </div>
       <div className="col-md-6">
-        <Account picture={props.picture} credibility={props.credibility} />
+        <Avatar picture={props.picture} credibility={props.credibility} />
       </div>
     </div>
   </nav>
