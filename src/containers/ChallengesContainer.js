@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import * as challengeActions from '../actions/challenge-actions';
+import Layout from '../Layout';
 import ChallengesList from '../components/ChallengesList';
 import ChallengeInput from '../components/ChallengeInput';
 
@@ -24,12 +25,13 @@ class ChallengesContainer extends Component {
     const selectedChallenge = this.props.selectedChallenge;
 
     return (
-      <div className="jumbotron">
-        <h2>Challenges</h2>
-        <ChallengesList challenges={challenges} selectChallenge={this.props.selectChallenge} />
-        <ChallengeInput selectedChallenge={selectedChallenge} />
-      </div>
-
+      <Layout>
+        <div className="jumbotron">
+          <h2>Challenges</h2>
+          <ChallengesList challenges={challenges} selectChallenge={this.props.selectChallenge} />
+          <ChallengeInput selectedChallenge={selectedChallenge} />
+        </div>
+      </Layout>
     );
   }
 }
