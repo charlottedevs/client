@@ -1,43 +1,43 @@
 import axios from 'axios';
 import {
   CREATE_EVENT,
-  FETCH_CREDITS,
+  FETCH_CHALLENGES,
   NETWORK_ERROR,
-  SELECT_CREDIT,
+  SELECT_CHALLENGE,
 } from './action-types';
 
-export const fetchCredits = () => {
+export const fetchChallenges = () => {
   const apiUrl = process.env.API_URL;
-  const creditsUrl = `${apiUrl}/credits`;
+  const challengesUrl = `${apiUrl}/challenges`;
 
   const jwt = window.localStorage.getItem('auth_token');
   const authHeaders = { Authorization: `Bearer ${jwt}` };
   const requestConfig = {
-    url: creditsUrl,
+    url: challengesUrl,
     headers: authHeaders,
   };
 
   return (dispatch) => {
     axios(requestConfig)
-      .then(response => dispatch({ type: FETCH_CREDITS, payload: response.data.credits }))
+      .then(response => dispatch({ type: FETCH_CHALLENGES, payload: response.data.challenges }))
       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
   };
 };
 
-export const selectCredit = credit => ({ type: SELECT_CREDIT, payload: credit });
+export const selectChallenge = challenge => ({ type: SELECT_CHALLENGE, payload: challenge });
 
 export const createEvent = (params) => {
   // TODO: common config:
   // https://github.com/mzabriskie/axios#global-axios-defaults
   //
   const apiUrl = process.env.API_URL;
-  const creditsUrl = `${apiUrl}/events`;
+  const challengesUrl = `${apiUrl}/events`;
 
   const jwt = window.localStorage.getItem('auth_token');
   const authHeaders = { Authorization: `Bearer ${jwt}` };
   const requestConfig = {
     method: 'post',
-    url: creditsUrl,
+    url: challengesUrl,
     headers: authHeaders,
     data: params,
   };

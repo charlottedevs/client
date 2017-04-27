@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import creditsReducer from './credits-reducer';
+import challengesReducer from './challenges-reducer';
 import accountReducer from './account-reducer';
 
 const rootReducer = combineReducers({
-  credits: creditsReducer,
+  challenges: challengesReducer,
   account: accountReducer,
 });
 

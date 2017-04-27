@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import * as creditActions from '../actions/credit-actions';
+import * as challengeActions from '../actions/challenge-actions';
 
-class CreditInput extends Component {
+class ChallengeInput extends Component {
   constructor(props) {
     super(props);
 
@@ -15,14 +15,14 @@ class CreditInput extends Component {
   }
 
   onSubmitEventClick() {
-    const credit = this.props.selectedCredit;
+    const challenge = this.props.selectedChallenge;
 
-    if (Object.keys(credit).length === 0) {
+    if (Object.keys(challenge).length === 0) {
       return;
     }
     const eventParams = {
       event: {
-        category: credit.name,
+        category: challenge.name,
         user_id: 1, // todo
         info: this.state.eventInfo,
       },
@@ -40,12 +40,12 @@ class CreditInput extends Component {
   }
 
   render() {
-    const selectedCredit = this.props.selectedCredit;
+    const selectedChallenge = this.props.selectedChallenge;
     return (
       <div>
         <hr />
-        <p>{selectedCredit.title}</p>
-        <p>{selectedCredit.points}</p>
+        <p>{selectedChallenge.title}</p>
+        <p>{selectedChallenge.points}</p>
         <input
           id="url" type="text" placeholder="url" onChange={this.handleInfoChange}
         />
@@ -59,8 +59,8 @@ class CreditInput extends Component {
   }
 }
 
-CreditInput.propTypes = {
-  selectedCredit: PropTypes.shape({
+ChallengeInput.propTypes = {
+  selectedChallenge: PropTypes.shape({
     title: PropTypes.string,
     points: PropTypes.number,
     description: PropTypes.string,
@@ -68,7 +68,7 @@ CreditInput.propTypes = {
   createEvent: PropTypes.func.isRequired,
 };
 
-CreditInput.defaultProps = {
-  selectedCredit: {},
+ChallengeInput.defaultProps = {
+  selectedChallenge: {},
 };
-export default connect(null, creditActions)(CreditInput);
+export default connect(null, challengeActions)(ChallengeInput);

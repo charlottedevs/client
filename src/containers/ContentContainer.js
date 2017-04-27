@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Login from '../components/Login';
-import CreditsContainer from './CreditsContainer';
+import ChallengesContainer from './ChallengesContainer';
 
 const ContentContainer = props => (
-  props.isAuthenticated ? <CreditsContainer /> : <Login />
+  props.isAuthenticated ? <ChallengesContainer /> : <Login />
 );
 
 function mapStateToProps(state) {
