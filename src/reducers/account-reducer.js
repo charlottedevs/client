@@ -5,7 +5,7 @@ const tokenExists = () => 'auth_token' in window.localStorage;
 const INITIAL_STATE = {
   isAuthenticated: tokenExists(),
   picture: window.localStorage.getItem('picture') || '',
-  credibility: null,
+  credibility: window.localStorage.getItem('credibility') || '',
 };
 
 const persistInfoToLocalStorage = info => (
@@ -30,6 +30,8 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.CREATE_SESSION:
       return createSession(action.payload, state);
+    case types.DESTROY_SESSION:
+      return { ...state, isAuthenticated: false };
     default:
       return state;
   }

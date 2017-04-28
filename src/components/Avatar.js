@@ -9,11 +9,7 @@ const Avatar = ({ picture, credibility }) => (
 
 Avatar.propTypes = {
   picture: PropTypes.string.isRequired,
-  credibility: PropTypes.number,
-};
-
-Avatar.defaultProps = {
-  credibility: null,
+  credibility: PropTypes.number.isRequired,
 };
 
 export default Avatar;
