@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
+import ReactMarkdown from 'react-markdown';
 
 const Challenge = ({ challenge }) => (
   <div className="col-md-4">
@@ -9,11 +10,12 @@ const Challenge = ({ challenge }) => (
         <h3>{challenge.title}</h3>
       </div>
       <div className="card-block">
-        <p>{challenge.body}</p>
+        <ReactMarkdown source={challenge.body} />
       </div>
       <div className="card-footer">
         <Button
-          bsStyle="secondary"
+          bsStyle="primary"
+          className="btn btn-secondary"
           href={challenge.url}
           target="_blank"
         >
