@@ -3,7 +3,6 @@ import {
   CREATE_EVENT,
   FETCH_CHALLENGES,
   NETWORK_ERROR,
-  SELECT_CHALLENGE,
 } from './action-types';
 
 export const fetchChallenges = () => {
@@ -23,8 +22,6 @@ export const fetchChallenges = () => {
       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
   };
 };
-
-export const selectChallenge = challenge => ({ type: SELECT_CHALLENGE, payload: challenge });
 
 export const createEvent = (params) => {
   // TODO: common config:
