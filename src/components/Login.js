@@ -22,14 +22,17 @@ class Login extends Component {
     }
 
     return (
-      <div>
-        <h3>Please log in</h3>
-        <GoogleLogin
-          clientId={process.env.GOOGLE_CLIENT_ID}
-          buttonText="Login"
-          onSuccess={this.handleGoogleResponse}
-          onFailure={this.handleGoogleResponse}
-        />
+      <div className="jumbotron">
+        <div className="loginCard card">
+          <h3>Please log in</h3>
+          <GoogleLogin
+            className="btn btn-primary"
+            clientId={process.env.GOOGLE_CLIENT_ID}
+            buttonText="Login"
+            onSuccess={this.handleGoogleResponse}
+            onFailure={this.handleGoogleResponse}
+          />
+        </div>
       </div>
     );
   }
