@@ -15,18 +15,27 @@ const NavContainer = props => (
         </Link>
       </div>
       <div className="col-md-6">
-        {
-          props.isAuthenticated ?
-            <button className="btn btn-primary" onClick={() => props.destroySession()}>
-              Sign Out
-            </button>
-          :
-            <button className="btn btn-primary"><Link to="/login">Sign In</Link></button>
-        }
-        <Link to="/challenges">Challenges</Link>
-        <Link to="/account">
-          <Avatar picture={props.picture} credibility={props.credibility} />
-        </Link>
+        <ul className="navbar-nav justify-content-around">
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/challenges">Challenges</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/account">
+              <Avatar picture={props.picture} credibility={props.credibility} />
+            </Link>
+          </li>
+          <li className="nav-item">
+            {
+              props.isAuthenticated ?
+                <button className="btn btn-primary" onClick={() => props.destroySession()}>
+                  Sign Out
+                </button>
+              :
+                <button className="btn btn-primary"><Link to="/login">Sign In</Link></button>
+            }
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
