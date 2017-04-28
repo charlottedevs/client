@@ -51,7 +51,7 @@ function mapStateToProps(state) {
 }
 
 NavContainer.propTypes = {
-  credibility: React.PropTypes.number.isRequired,
+  credibility: React.PropTypes.string.isRequired,
   destroySession: React.PropTypes.func.isRequired,
   picture: React.PropTypes.string.isRequired,
   isAuthenticated: React.PropTypes.bool.isRequired,
