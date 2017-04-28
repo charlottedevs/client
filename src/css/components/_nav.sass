@@ -3,8 +3,22 @@
   color: $white
   a
     color: $white
+  .brand
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    @media screen and (max-width: $break-small)
+      justify-content: center
+      margin-bottom: 20px
+      .brandName
+        display: none
   .navbar-nav
     flex-direction: row
+    justify-content: flex-end
+    align-items: center
+    .nav-item
+      margin-right: 20px
   .crown
     width: 40px
     margin-right: 10px
@@ -20,6 +34,7 @@
 
 .subNav
   margin-bottom: 40px
+  padding: 20px
   .categorySwitches
     margin-left: 10px
     margin-right: 10px

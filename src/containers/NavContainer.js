@@ -7,35 +7,36 @@ import bigolcrown from '../assets/images/bigolcrown.png';
 
 const NavContainer = props => (
   <nav className="navbar">
-    <div className="row">
-      <div className="col-md-6 align-items-center">
-        <img className="crown" src={bigolcrown} alt="crown" />
-        <Link to="/" className="navbar-brand">
-          Charlotte Junior Devs
-        </Link>
-      </div>
-      <div className="col-md-6">
-        <ul className="navbar-nav">
-
-          <li className="nav-item">
-            <Link className="nav-link" to="/challenges">Challenges</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/account">
-              <Avatar picture={props.picture} credibility={props.credibility} />
-            </Link>
-          </li>
-          <li className="nav-item">
-            {
-              props.isAuthenticated ?
-                <button className="btn btn-primary" onClick={() => props.destroySession()}>
-                  Sign Out
-                </button>
-              :
-                <button className="btn btn-primary"><Link to="/login">Sign In</Link></button>
-            }
-          </li>
-        </ul>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6 brand">
+          <img className="crown" src={bigolcrown} alt="crown" />
+          <Link to="/" className="brandName">
+            Charlotte Junior Devs
+          </Link>
+        </div>
+        <div className="col-md-6">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/challenges">Challenges</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/account">
+                <Avatar picture={props.picture} credibility={props.credibility} />
+              </Link>
+            </li>
+            <li className="nav-item">
+              {
+                props.isAuthenticated ?
+                  <button className="btn btn-primary" onClick={() => props.destroySession()}>
+                    Sign Out
+                  </button>
+                :
+                  <button className="btn btn-primary"><Link to="/login">Sign In</Link></button>
+              }
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
