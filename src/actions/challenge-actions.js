@@ -3,6 +3,7 @@ import {
   CREATE_EVENT,
   FETCH_CHALLENGES,
   NETWORK_ERROR,
+  CATEGORY_CHANGE,
 } from './action-types';
 
 export const fetchChallenges = () => {
@@ -45,3 +46,7 @@ export const createEvent = (params) => {
       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
   };
 };
+
+export const changeCategory = category => (
+  { type: CATEGORY_CHANGE, payload: category }
+);
