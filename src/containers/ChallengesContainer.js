@@ -1,27 +1,28 @@
+/* eslint-disable */
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import * as challengeActions from '../actions/challenge-actions';
 import ChallengesList from '../components/ChallengesList';
-import CategoriesList from '../components/CategoriesList';
+import ReposList from '../components/ReposList';
 
 class ChallengesContainer extends Component {
   componentDidMount() {
     if (this.props.isAuthenticated) {
-      this.props.fetchChallenges();
+      this.props.fetchChallenges(this.props.currentRepo);
+      this.props.fetchRepos();
     }
   }
 
   render() {
-    const currentCategory = this.props.currentCategory;
-    const challenges = this.props.challenges.filter(el => el.repo.split('/')[1] === currentCategory);
-    const categories = this.props.categories;
-    const changeCategory = this.props.changeCategory;
+    const challenges = this.props.challenges;
+    const repos = this.props.repos;
+    const changeRepo = this.props.changeRepo;
 
     return (
       <div className="jumbotron">
         <div className="container">
           <h2>Challenges</h2>
-          <CategoriesList categories={categories} changeCategory={changeCategory} />
+          <ReposList repos={repos} changeRepo={changeRepo} />
           <ChallengesList challenges={challenges} />
         </div>
       </div>
@@ -30,20 +31,30 @@ class ChallengesContainer extends Component {
 }
 
 ChallengesContainer.propTypes = {
-  challenges: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  challenges: PropTypes.arrayOf(PropTypes.shape),
   fetchChallenges: PropTypes.func.isRequired,
+  fetchRepos: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  categories: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-  changeCategory: React.PropTypes.func.isRequired,
-  currentCategory: React.PropTypes.string.isRequired,
+  changeRepo: React.PropTypes.func.isRequired,
+  currentRepo: React.PropTypes.string.isRequired,
+  repos: React.PropTypes.arrayOf(
+    React.PropTypes.shape({
+      name: React.PropTypes.string,
+      path: React.PropTypes.string,
+    }),
+  ),
 };
 
+ChallengesContainer.defaultProps = {
+  repos: [],
+  challenges: [],
+}
 function mapStateToProps(state) {
   return {
-    categories: state.challenges.categories,
+    repos: state.repos.repos,
     challenges: state.challenges.challenges,
     isAuthenticated: state.account.isAuthenticated,
-    currentCategory: state.challenges.currentCategory,
+    currentRepo: state.repos.currentRepo,
   };
 }
 
