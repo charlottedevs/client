@@ -21,7 +21,7 @@ const NavContainer = props => (
               <Link className="nav-link" to="/challenges">Challenges</Link>
             </li>
             <li className="nav-item">
-              <Link to="/account">
+              <Link to="/account" className="accountLink">
                 <Avatar picture={props.picture} credibility={props.credibility} />
               </Link>
             </li>
