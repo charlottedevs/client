@@ -13,7 +13,7 @@ const Challenge = ({ challenge }) => (
       </div>
       <div className="card-footer">
         <Button
-          bsStyle="primary"
+          bsStyle="secondary"
           href={challenge.url}
           target="_blank"
         >

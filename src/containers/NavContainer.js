@@ -15,7 +15,7 @@ const NavContainer = props => (
         </Link>
       </div>
       <div className="col-md-6">
-        <ul className="navbar-nav justify-content-around">
+        <ul className="navbar-nav">
 
           <li className="nav-item">
             <Link className="nav-link" to="/challenges">Challenges</Link>

@@ -19,9 +19,11 @@ class ChallengesContainer extends Component {
 
     return (
       <div className="jumbotron">
-        <h2>Challenges</h2>
-        <CategoriesList categories={categories} changeCategory={changeCategory} />
-        <ChallengesList challenges={challenges} />
+        <div className="container">
+          <h2>Challenges</h2>
+          <CategoriesList categories={categories} changeCategory={changeCategory} />
+          <ChallengesList challenges={challenges} />
+        </div>
       </div>
     );
   }

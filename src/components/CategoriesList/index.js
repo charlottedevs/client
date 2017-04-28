@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Category from '../Category';
 
 const CategoriesList = ({ categories, changeCategory }) => (
-  <div className="row">
+  <div className="row subNav justify-content-center">
     {categories.map(category =>
       <Category
         key={category}
