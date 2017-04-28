@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Avatar from '../components/Avatar';
 import bigolcrown from '../assets/images/bigolcrown.png';
 
@@ -8,7 +9,9 @@ const HeaderContainer = props => (
     <div className="row">
       <div className="col-md-6 align-items-center">
         <img className="crown" src={bigolcrown} alt="crown" />
-        <a className="navbar-brand" href="www.google.com">Charlotte Junior Devs</a>
+        <Link to="/" className="navbar-brand">
+          Charlotte Junior Devs
+        </Link>
       </div>
       <div className="col-md-6">
         <Avatar picture={props.picture} credibility={props.credibility} />
