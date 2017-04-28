@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import * as challengeActions from '../actions/challenge-actions';
-import Layout from '../Layout';
 import ChallengesList from '../components/ChallengesList';
 
 class ChallengesContainer extends Component {
@@ -15,12 +14,10 @@ class ChallengesContainer extends Component {
     const challenges = this.props.challenges;
 
     return (
-      <Layout>
-        <div className="jumbotron">
-          <h2>Challenges</h2>
-          <ChallengesList challenges={challenges} />
-        </div>
-      </Layout>
+      <div className="jumbotron">
+        <h2>Challenges</h2>
+        <ChallengesList challenges={challenges} />
+      </div>
     );
   }
 }
