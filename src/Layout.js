@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.sass';
-import HeaderContainer from './containers/HeaderContainer';
+import NavContainer from './containers/NavContainer';
 import FooterContainer from './containers/FooterContainer';
 
 const Layout = props => (
   <div>
-    <HeaderContainer />
+    <NavContainer />
     {props.children}
     <FooterContainer />
   </div>

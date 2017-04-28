@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   CREATE_SESSION,
   NETWORK_ERROR,
+  DESTROY_SESSION,
 } from './action-types';
 
 export const createSession = (jwt) => {
@@ -19,5 +20,10 @@ export const createSession = (jwt) => {
       .then(response => dispatch({ type: CREATE_SESSION, payload: response.data.user_info }))
       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
   };
+};
+
+export const destroySession = () => {
+  window.localStorage.clear();
+  return ({ type: DESTROY_SESSION });
 };
 

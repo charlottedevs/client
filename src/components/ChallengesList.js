@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react';
 import Challenge from './Challenge';
 
-const ChallengesList = ({ challenges, selectChallenge }) => (
+const ChallengesList = ({ challenges }) => (
   <div className="row">
     {challenges.map(challenge =>
       <Challenge
         key={challenge.id}
         challenge={challenge}
-        selectChallenge={selectChallenge}
       />,
       )}
   </div>
@@ -15,7 +14,6 @@ const ChallengesList = ({ challenges, selectChallenge }) => (
 
 ChallengesList.propTypes = {
   challenges: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  selectChallenge: PropTypes.func.isRequired,
 };
 
 export default ChallengesList;
