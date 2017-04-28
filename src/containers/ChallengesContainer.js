@@ -3,17 +3,8 @@ import { connect } from 'react-redux';
 import * as challengeActions from '../actions/challenge-actions';
 import Layout from '../Layout';
 import ChallengesList from '../components/ChallengesList';
-import ChallengeInput from '../components/ChallengeInput';
 
 class ChallengesContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedChallenge: 'foo',
-    };
-  }
-
   componentDidMount() {
     if (this.props.isAuthenticated) {
       this.props.fetchChallenges();
@@ -22,14 +13,12 @@ class ChallengesContainer extends Component {
 
   render() {
     const challenges = this.props.challenges;
-    const selectedChallenge = this.props.selectedChallenge;
 
     return (
       <Layout>
         <div className="jumbotron">
           <h2>Challenges</h2>
-          <ChallengesList challenges={challenges} selectChallenge={this.props.selectChallenge} />
-          <ChallengeInput selectedChallenge={selectedChallenge} />
+          <ChallengesList challenges={challenges} />
         </div>
       </Layout>
     );
@@ -38,18 +27,8 @@ class ChallengesContainer extends Component {
 
 ChallengesContainer.propTypes = {
   challenges: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  selectedChallenge: PropTypes.shape({
-    title: PropTypes.string,
-    points: PropTypes.number,
-    description: PropTypes.string,
-  }),
   fetchChallenges: PropTypes.func.isRequired,
-  selectChallenge: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-};
-
-ChallengesContainer.defaultProps = {
-  selectedChallenge: {},
 };
 
 function mapStateToProps(state) {
