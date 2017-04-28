@@ -14,7 +14,8 @@ const Challenge = ({ challenge }) => (
       </div>
       <div className="card-footer">
         <Button
-          bsStyle="secondary"
+          bsStyle="primary"
+          className="btn btn-secondary"
           href={challenge.url}
           target="_blank"
         >
