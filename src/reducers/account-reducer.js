@@ -31,7 +31,7 @@ export default (state = INITIAL_STATE, action) => {
     case types.CREATE_SESSION:
       return createSession(action.payload, state);
     case types.DESTROY_SESSION:
-      return { ...state, isAuthenticated: false };
+      return INITIAL_STATE;
     default:
       return state;
   }
