@@ -19,10 +19,12 @@ class ChallengesContainer extends Component {
     const changeRepo = this.props.changeRepo;
 
     return (
-      <div className="jumbotron">
-        <div className="container">
+      <div>
+        <div className="jumbotron challengeJumbo">
           <h2>Challenges</h2>
           <ReposList repos={repos} changeRepo={changeRepo} />
+        </div>
+        <div className="container ">
           <ChallengesList challenges={challenges} />
         </div>
       </div>
