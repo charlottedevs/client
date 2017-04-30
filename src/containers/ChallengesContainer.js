@@ -8,7 +8,7 @@ import ReposList from '../components/ReposList';
 class ChallengesContainer extends Component {
   componentDidMount() {
     if (this.props.isAuthenticated) {
-      this.props.fetchChallenges(this.props.currentRepo);
+      this.props.fetchChallenges('');
       this.props.fetchRepos();
     }
   }
