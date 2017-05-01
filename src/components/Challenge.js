@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 
 const Challenge = ({ challenge }) => (
-  <div className="col-md-4">
+  <div className="col-md-6">
     <div className="card">
       <div className="card-header">
         <p className="points">{challenge.labels}<span>pts</span></p>

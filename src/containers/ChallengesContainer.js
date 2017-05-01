@@ -23,7 +23,7 @@ class ChallengesContainer extends Component {
           <h2>Challenges</h2>
           <ReposList repos={repos} changeRepo={changeRepo} />
         </div>
-        <div className="container ">
+        <div className="container challengesContainer">
           <ChallengesList challenges={challenges} />
         </div>
       </div>

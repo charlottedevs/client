@@ -20,6 +20,9 @@ const NavContainer = props => (
             <li className="nav-item">
               <Link className="nav-link" to="/challenges">Challenges</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/leaderboard">Leaderboard</Link>
+            </li>
             {
               props.isAuthenticated &&
               <li className="nav-item">

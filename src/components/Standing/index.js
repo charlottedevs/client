@@ -1,12 +1,13 @@
 import React from 'react';
 
 const Standing = ({ standing }) => (
-  <div className="col-md-4">
-    <p>this is a standing</p>
+  <div className="list-group-item">
+    <img src={standing.picture} alt="avatar" className="avatar" />
     {standing.first_name}
     {standing.last_name}
-    {standing.credibility}
+    <p className="credits">{standing.credibility}</p>
   </div>
+
   );
 
 Standing.propTypes = {

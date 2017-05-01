@@ -2,13 +2,15 @@ import React, { PropTypes } from 'react';
 import Standing from '../Standing';
 
 const StandingsList = ({ standings }) => (
-  <div className="row">
-    {standings.map(standing =>
-      <Standing
-        key={standing.id}
-        standing={standing}
-      />,
-      )}
+  <div className="card leaderboardCard">
+    <div className="list-group">
+      {standings.map(standing =>
+        <Standing
+          key={standing.id}
+          standing={standing}
+        />,
+        )}
+    </div>
   </div>
   );
 

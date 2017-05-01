@@ -8,9 +8,11 @@
   border-radius: 0px
   box-shadow: 0px 4px 10px #888888
   padding: 10px 20px
-  max-width: 400px
   margin-left: auto
   margin-right: auto
+  // min-height: 400px
+  // max-height: 400px
+  overflow-y: scroll
   .card-block
     p
       font-weight: 300
@@ -46,3 +48,24 @@
 
 .loginCard
   min-height: 100px
+
+.leaderboardCard
+  width: 100%
+  max-width: none
+  padding: 0px
+  .list-group
+    .list-group-item
+      background-color: rgba(0, 0, 0, 0)
+      border-color: lighten($dark-blue, 5%)
+      border-left: none
+      border-right: none
+      .avatar
+        border-radius: 50%
+        width: 50px
+        margin: 10px
+      .credits
+        float: right
+        margin-left: 10px
+        font-weight: bold
+        color: $teal
+        font-size: 30px
