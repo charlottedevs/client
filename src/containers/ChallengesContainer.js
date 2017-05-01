@@ -1,5 +1,4 @@
-/* eslint-disable */
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as challengeActions from '../actions/challenge-actions';
 import ChallengesList from '../components/ChallengesList';
@@ -8,7 +7,7 @@ import ReposList from '../components/ReposList';
 class ChallengesContainer extends Component {
   componentDidMount() {
     if (this.props.isAuthenticated) {
-      this.props.fetchChallenges(this.props.currentRepo);
+      this.props.fetchChallenges('');
       this.props.fetchRepos();
     }
   }
@@ -33,12 +32,11 @@ class ChallengesContainer extends Component {
 }
 
 ChallengesContainer.propTypes = {
-  challenges: PropTypes.arrayOf(PropTypes.shape),
-  fetchChallenges: PropTypes.func.isRequired,
-  fetchRepos: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired,
+  challenges: React.PropTypes.arrayOf(React.PropTypes.shape),
+  fetchChallenges: React.PropTypes.func.isRequired,
+  fetchRepos: React.PropTypes.func.isRequired,
+  isAuthenticated: React.PropTypes.bool.isRequired,
   changeRepo: React.PropTypes.func.isRequired,
-  currentRepo: React.PropTypes.string.isRequired,
   repos: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       name: React.PropTypes.string,
@@ -50,13 +48,13 @@ ChallengesContainer.propTypes = {
 ChallengesContainer.defaultProps = {
   repos: [],
   challenges: [],
-}
+};
+
 function mapStateToProps(state) {
   return {
     repos: state.repos.repos,
     challenges: state.challenges.challenges,
     isAuthenticated: state.account.isAuthenticated,
-    currentRepo: state.repos.currentRepo,
   };
 }
 

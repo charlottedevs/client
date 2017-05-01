@@ -5,10 +5,10 @@ import {
   DESTROY_SESSION,
 } from './action-types';
 
-export const createSession = (jwt) => {
+export const createSession = (googleOauthJWT) => {
   const apiUrl = process.env.API_URL;
   const sessionUrl = `${apiUrl}/session`;
-  const authHeaders = { Authorization: `Bearer ${jwt}` };
+  const authHeaders = { Authorization: `Bearer ${googleOauthJWT}` };
   const requestConfig = {
     method: 'post',
     url: sessionUrl,
