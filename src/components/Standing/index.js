@@ -2,6 +2,7 @@ import React from 'react';
 
 const Standing = ({ standing }) => (
   <div className="list-group-item">
+    <p>{standing.rank}</p>
     <img src={standing.picture} alt="avatar" className="avatar" />
     {standing.first_name}
     {standing.last_name}

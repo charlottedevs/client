@@ -4,10 +4,11 @@ import Standing from '../Standing';
 const StandingsList = ({ standings }) => (
   <div className="card leaderboardCard">
     <div className="list-group">
-      {standings.map(standing =>
+      {standings.map((standing, index) =>
         <Standing
           key={standing.id}
           standing={standing}
+          rank={index}
         />,
         )}
     </div>
