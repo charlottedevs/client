@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './common';
 import {
   CREATE_SESSION,
   NETWORK_ERROR,
@@ -6,8 +7,7 @@ import {
 } from './action-types';
 
 export const createSession = (googleOauthJWT) => {
-  const apiUrl = process.env.API_URL;
-  const sessionUrl = `${apiUrl}/session`;
+  const sessionUrl = '/session';
   const authHeaders = { Authorization: `Bearer ${googleOauthJWT}` };
   const requestConfig = {
     method: 'post',
@@ -27,3 +27,10 @@ export const destroySession = () => {
   return ({ type: DESTROY_SESSION });
 };
 
+// export const updateAccount = params => {
+//   return (dispatch) => {
+//     axios(requestConfig)
+//       .then(response => dispatch({ type: UPDATE_ACCOUNT, payload: response.data.user }))
+//       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
+//   };
+// }
