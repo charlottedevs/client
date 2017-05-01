@@ -30,8 +30,7 @@ Challenge.propTypes = {
   challenge: PropTypes.shape({
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    points: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
   }),
 };
 
