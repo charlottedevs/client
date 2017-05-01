@@ -6,6 +6,15 @@ const INITIAL_STATE = {
   isAuthenticated: tokenExists(),
   picture: window.localStorage.getItem('picture') || '',
   credibility: window.localStorage.getItem('credibility') || '',
+  account: {
+    resume_site_url: '',
+    linkedin_url: '',
+    stackoverflow_url: '',
+    twitter_handle: '',
+    github_handle: '',
+    codewars_handle: '',
+  },
+  successfulUpdate: false,
 };
 
 const persistInfoToLocalStorage = info => (
@@ -32,6 +41,18 @@ export default (state = INITIAL_STATE, action) => {
       return createSession(action.payload, state);
     case types.DESTROY_SESSION:
       return INITIAL_STATE;
+    case types.FETCH_ACCOUNT:
+      return { ...state, account: action.payload, successfulUpdate: false };
+    case types.UPDATE_FIELD:
+      return {
+        ...state,
+        account: {
+          ...state.account,
+          [action.payload.key]: action.payload.target,
+        },
+      };
+    case types.UPDATE_ACCOUNT:
+      return { ...state, account: action.payload, successfulUpdate: true };
     default:
       return state;
   }
