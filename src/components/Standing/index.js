@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Standing = ({ standing }) => (
+const Standing = ({ standing, rank }) => (
   <div className="list-group-item">
-    <p>{standing.rank}</p>
+    <p>{rank}</p>
     <img src={standing.picture} alt="avatar" className="avatar" />
     {standing.first_name}
     {standing.last_name}
@@ -12,11 +12,12 @@ const Standing = ({ standing }) => (
   );
 
 Standing.propTypes = {
+  rank: React.PropTypes.number.isRequired,
   standing: React.PropTypes.shape({
-    id: React.PropTypes.string.isRequired,
+    id: React.PropTypes.number.isRequired,
     first_name: React.PropTypes.string.isRequired,
     last_name: React.PropTypes.string.isRequired,
-    credibility: React.PropTypes.string.isRequired,
+    credibility: React.PropTypes.number.isRequired,
   }),
 };
 

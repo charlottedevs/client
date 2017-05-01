@@ -8,12 +8,12 @@ const StandingsList = ({ standings }) => (
         <Standing
           key={standing.id}
           standing={standing}
-          rank={index}
+          rank={index + 1}
         />,
-        )}
+      )}
     </div>
   </div>
-  );
+);
 
 StandingsList.propTypes = {
   standings: PropTypes.arrayOf(PropTypes.shape).isRequired,
