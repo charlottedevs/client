@@ -23,15 +23,19 @@ class Login extends Component {
 
     return (
       <div className="jumbotron">
-        <div className="loginCard card">
-          <h3>Please log in</h3>
-          <GoogleLogin
-            className="btn btn-primary"
-            clientId={process.env.GOOGLE_CLIENT_ID}
-            buttonText="Login"
-            onSuccess={this.handleGoogleResponse}
-            onFailure={this.handleGoogleResponse}
-          />
+        <div className="row justify-content-md-center">
+          <div className="col-md-6 ">
+            <div className="loginCard card">
+              <h3>Please log in</h3>
+              <GoogleLogin
+                className="btn btn-primary"
+                clientId={process.env.GOOGLE_CLIENT_ID}
+                buttonText="Login"
+                onSuccess={this.handleGoogleResponse}
+                onFailure={this.handleGoogleResponse}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );

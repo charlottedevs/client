@@ -18,7 +18,7 @@ class LeaderboardContainer extends Component {
         <div className="jumbotron leaderboardJumbo">
           <h2>Leaderboard</h2>
         </div>
-        <div className="container ">
+        <div className="container">
           <Standings standings={standings} />
         </div>
       </div>

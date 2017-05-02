@@ -2,10 +2,10 @@ import React from 'react';
 
 const Standing = ({ standing, rank }) => (
   <div className="list-group-item">
-    <p>{rank}</p>
+    <p className="rank">{rank}</p>
     <img src={standing.picture} alt="avatar" className="avatar" />
-    {standing.first_name}
-    {standing.last_name}
+    <p>{standing.first_name}</p>
+    <p>{standing.last_name}</p>
     <p className="credits">{standing.credibility}</p>
   </div>
 

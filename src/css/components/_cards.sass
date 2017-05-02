@@ -48,6 +48,11 @@
 
 .loginCard
   min-height: 100px
+  height: 180px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: 40px
 
 .leaderboardCard
   width: 100%
@@ -59,10 +64,16 @@
       border-color: lighten($dark-blue, 5%)
       border-left: none
       border-right: none
+      display: flex
+      align-items: center
+      p
+        margin-bottom: 0px
       .avatar
         border-radius: 50%
         width: 50px
-        margin: 10px
+        margin: 0px 10px
+      .rank
+        font-size: 30px
       .credits
         float: right
         margin-left: 10px
