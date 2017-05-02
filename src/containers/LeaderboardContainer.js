@@ -19,7 +19,11 @@ class LeaderboardContainer extends Component {
           <h2>Leaderboard</h2>
         </div>
         <div className="container">
-          <Standings standings={standings} />
+          <div className="row justify-content-md-center">
+            <div className="col-md-8 ">
+              <Standings standings={standings} />
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -6,7 +6,6 @@ const Challenge = ({ challenge }) => (
   <div className="col-md-6">
     <div className="card">
       <div className="card-header">
-        <p className="points">{challenge.labels}<span>pts</span></p>
         <h3>{challenge.title}</h3>
       </div>
       <div className="card-block">
