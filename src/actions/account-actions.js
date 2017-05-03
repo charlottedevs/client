@@ -32,17 +32,16 @@ export const destroySession = () => {
 
 export const fetchAccount = () => (
   (dispatch) => {
-    axios.get('/user')
+    axios.get('/settings')
       .then(response => dispatch({ type: FETCH_ACCOUNT, payload: response.data.user }))
       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
   }
 );
 
 export const updateAccount = (params) => {
-  const accountUrl = '/user';
   const requestConfig = {
     method: 'put',
-    url: accountUrl,
+    url: '/settings',
     data: { user: params },
   };
 
