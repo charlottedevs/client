@@ -5,8 +5,8 @@ import CredTransactionsList from '../components/CredTransactionsList';
 
 class CredTransactionsContainer extends Component {
   componentDidMount() {
-    if (this.props.isAuthenticated) {
-      this.props.fetchCredTransactions();
+    if (this.props.isAuthenticated && this.props.userId) {
+      this.props.fetchCredTransactions(this.props.userId);
     }
   }
 
@@ -25,6 +25,7 @@ CredTransactionsContainer.propTypes = {
   credTransactions: React.PropTypes.arrayOf(React.PropTypes.shape).isRequired,
   fetchCredTransactions: React.PropTypes.func.isRequired,
   isAuthenticated: React.PropTypes.bool.isRequired,
+  userId: React.PropTypes.string.isRequired,
 };
 
 

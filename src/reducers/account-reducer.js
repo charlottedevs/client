@@ -43,7 +43,7 @@ export default (state = INITIAL_STATE, action) => {
     case types.DESTROY_SESSION:
       return INITIAL_STATE;
     case types.FETCH_ACCOUNT:
-      return { ...state, account: action.payload, successfulUpdate: false };
+      return { ...state, account: action.payload, successfulUpdate: false, responseStatus: 200 };
     case types.UPDATE_FIELD:
       return {
         ...state,
@@ -56,6 +56,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, account: action.payload, successfulUpdate: true };
     case types.FETCH_CRED_TRANSACTIONS:
       return { ...state, credTransactions: action.payload };
+    case types.NETWORK_ERROR:
+      return { ...state, responseStatus: action.payload.response.status };
     default:
       return state;
   }

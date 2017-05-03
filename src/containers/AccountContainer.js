@@ -1,33 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as accountActions from '../actions/account-actions';
-import Settings from '../components/Settings';
 import CredTransactionsContainer from './CredTransactionsContainer';
+import AccountCard from '../components/AccountCard';
+import NotFound from '../components/NotFound';
 
 class AccountContainer extends Component {
   componentDidMount() {
+    const userId = this.props.match.params.user_id;
     if (this.props.isAuthenticated) {
-      this.props.fetchAccount();
+      this.props.fetchAccount(userId);
     }
   }
 
   render() {
     return (
       <div>
-        <div className="jumbotron accountJumbo">
-          <h2>Account</h2>
-        </div>
-        <div className="container ">
-          <Settings
-            account={this.props.account}
-            updateField={this.props.updateField}
-            updateAccount={this.props.updateAccount}
-            isUpdate={this.props.successfulUpdate}
-          />
-        </div>
-        <div className="container ">
-          <CredTransactionsContainer />
-        </div>
+        {this.props.responseStatus === 404 ? (
+          <NotFound />
+        ) : (
+          <div>
+            <div className="jumbotron accountJumbo">
+              <b>Account</b>
+              <AccountCard account={this.props.account} />
+            </div>
+            <div className="container ">
+              <CredTransactionsContainer userId={this.props.match.params.user_id} />
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -35,10 +36,13 @@ class AccountContainer extends Component {
 
 AccountContainer.propTypes = {
   fetchAccount: React.PropTypes.func.isRequired,
-  successfulUpdate: React.PropTypes.bool.isRequired,
-  updateField: React.PropTypes.func.isRequired,
-  updateAccount: React.PropTypes.func.isRequired,
+  responseStatus: React.PropTypes.number.isRequired,
   isAuthenticated: React.PropTypes.bool.isRequired,
+  match: React.PropTypes.shape({
+    params: React.PropTypes.shape({
+      user_id: React.PropTypes.string,
+    }),
+  }).isRequired,
   account: React.PropTypes.shape({
     id: React.PropTypes.number,
     first_name: React.PropTypes.string,
@@ -52,12 +56,16 @@ AccountContainer.propTypes = {
   }).isRequired,
 };
 
+AccountContainer.defaultProps = {
+  responseStatus: 200,
+};
+
 
 function mapStateToProps(state) {
   return {
-    account: state.account.account,
     isAuthenticated: state.account.isAuthenticated,
-    successfulUpdate: state.account.successfulUpdate,
+    account: state.account.account,
+    responseStatus: state.account.responseStatus,
   };
 }
 
