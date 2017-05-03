@@ -2,7 +2,7 @@ import React from 'react';
 
 const Repo = ({ repo, changeRepo, repoPath }) => (
   <div className="repoSwitches">
-    <button className="btn btn-secondary" onClick={() => changeRepo(repoPath)}>
+    <button className="btn btn-subnav" onClick={() => changeRepo(repoPath)}>
       {repo}
     </button>
   </div>

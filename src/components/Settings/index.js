@@ -36,7 +36,7 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
   return (
     <div className={'Account'}>
       <div className="container">
-        <div className="accountCard card">
+        <div className="settingsCard card">
           <h1>
             Account Settings
           </h1>

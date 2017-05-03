@@ -40,11 +40,13 @@
         font-size: 20px
         font-weight: 300
 
-.accountCard
+.settingsCard
   width: 100%
   max-width: none
   margin-top: 60px
   margin-bottom: 60px
+  h2
+    color: $white
 
 .loginCard
   min-height: 100px
@@ -82,7 +84,17 @@
         font-size: 30px
 
 .accountCard
-  .accountAvatar
-    border-radius: 50%
-    margin-left: auto
-    margin-right: auto
+  padding: 40px
+  width: 100%
+  .accountInfo
+    .credibility
+      color: $teal
+      font-size: 40px
+  .userInfo
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    .accountAvatar
+      border-radius: 50%
+      margin: 0px auto 20px auto
