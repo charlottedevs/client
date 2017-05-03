@@ -21,7 +21,6 @@ class AccountContainer extends Component {
         ) : (
           <div>
             <div className="jumbotron accountJumbo">
-              <b>Account</b>
               <AccountCard account={this.props.account} />
             </div>
             <div className="container ">

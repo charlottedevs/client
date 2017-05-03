@@ -24,7 +24,7 @@ class Login extends Component {
     return (
       <div className="jumbotron">
         <div className="row justify-content-md-center">
-          <div className="col-md-6 ">
+          <div className="col-md-6 col-lg-4">
             <div className="loginCard card">
               <h3>Please log in</h3>
               <GoogleLogin

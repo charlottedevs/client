@@ -1,12 +1,17 @@
 import React from 'react';
 
 const AccountCard = ({ account }) => (
-  <div>
-    <h5>This is the baseball card</h5>
-    <p>first name: {account.first_name}</p>
-    <p>last name: {account.last_name}</p>
-    <p>credibility: {account.credibility}</p>
-    <p>picture: {account.picture}</p>
+  <div className="card accountCard">
+    <div className="row">
+      <div className="col-md-6">
+        <img src={account.picture} alt="avatar" className="accountAvatar" />
+      </div>
+      <div className="col-md-6">
+        <h2>{account.first_name} {account.last_name}</h2>
+        <p>{account.credibility}pts</p>
+      </div>
+    </div>
+
   </div>
 );
 

@@ -25,17 +25,17 @@ const NavContainer = props => (
             </li>
             {
               props.isAuthenticated &&
-                <div>
-                  <li className="nav-item">
-                    <Link to="/settings" className="accountLink">
-                      <Avatar picture={props.picture} credibility={props.credibility} />
-                    </Link>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link to={`/users/${window.localStorage.getItem('id')}`}>Account</Link>
-                  </li>
-                </div>
+                <li className="nav-item">
+                  <Link to={`/users/${window.localStorage.getItem('id')}`}>Account</Link>
+                </li>
+            }
+            {
+              props.isAuthenticated &&
+                <li className="nav-item">
+                  <Link to="/settings" className="accountLink">
+                    <Avatar picture={props.picture} credibility={props.credibility} />
+                  </Link>
+                </li>
             }
             <li className="nav-item">
               {
