@@ -8,7 +8,7 @@ import {
   FormControl,
 } from 'react-bootstrap';
 
-const Account = ({ account, updateField, updateAccount, isUpdate }) => {
+const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
   const resumeSiteUrl = account.resume_site_url;
   const linkedinUrl = account.linked_in_url;
   const stackoverflowUrl = account.stackoverflow_url;
@@ -147,7 +147,7 @@ const Account = ({ account, updateField, updateAccount, isUpdate }) => {
   );
 };
 
-Account.propTypes = {
+Settings.propTypes = {
   isUpdate: React.PropTypes.bool.isRequired,
   updateField: React.PropTypes.func.isRequired,
   updateAccount: React.PropTypes.func.isRequired,
@@ -157,4 +157,4 @@ Account.propTypes = {
   }).isRequired,
 };
 
-export default Account;
+export default Settings;

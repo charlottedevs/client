@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as accountActions from '../actions/account-actions';
-import Account from '../components/Account';
+import Settings from '../components/Settings';
 
 class AccountContainer extends Component {
   componentDidMount() {
@@ -17,7 +17,7 @@ class AccountContainer extends Component {
           <h2>Account</h2>
         </div>
         <div className="container ">
-          <Account
+          <Settings
             account={this.props.account}
             updateField={this.props.updateField}
             updateAccount={this.props.updateAccount}
