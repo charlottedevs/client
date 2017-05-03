@@ -33,7 +33,7 @@ const NavContainer = props => (
                   </li>
 
                   <li className="nav-item">
-                    <Link to={`/users/${window.localStorage.getItem('id')}`}>History</Link>
+                    <Link to={`/users/${window.localStorage.getItem('id')}`}>Account</Link>
                   </li>
                 </div>
             }
