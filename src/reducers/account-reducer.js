@@ -15,6 +15,7 @@ const INITIAL_STATE = {
     codewars_handle: '',
   },
   successfulUpdate: false,
+  credTransactions: [],
 };
 
 const persistInfoToLocalStorage = info => (
@@ -53,6 +54,8 @@ export default (state = INITIAL_STATE, action) => {
       };
     case types.UPDATE_ACCOUNT:
       return { ...state, account: action.payload, successfulUpdate: true };
+    case types.FETCH_CRED_TRANSACTIONS:
+      return { ...state, credTransactions: action.payload };
     default:
       return state;
   }

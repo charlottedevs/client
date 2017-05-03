@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as accountActions from '../actions/account-actions';
 import Settings from '../components/Settings';
+import CredTransactionsContainer from './CredTransactionsContainer';
 
 class AccountContainer extends Component {
   componentDidMount() {
@@ -23,6 +24,9 @@ class AccountContainer extends Component {
             updateAccount={this.props.updateAccount}
             isUpdate={this.props.successfulUpdate}
           />
+        </div>
+        <div className="container ">
+          <CredTransactionsContainer />
         </div>
       </div>
     );

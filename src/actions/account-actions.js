@@ -7,6 +7,7 @@ import {
   FETCH_ACCOUNT,
   UPDATE_ACCOUNT,
   UPDATE_FIELD,
+  FETCH_CRED_TRANSACTIONS,
 } from './action-types';
 
 export const createSession = (googleOauthJWT) => {
@@ -54,4 +55,13 @@ export const updateAccount = (params) => {
 
 export const updateField = (key, target) => (
   { type: UPDATE_FIELD, payload: { key, target } }
+);
+
+export const fetchCredTransactions = () => (
+  (dispatch) => {
+    axios.get('/users/1/cred_transactions')
+      .then(response =>
+        dispatch({ type: FETCH_CRED_TRANSACTIONS, payload: response.data.cred_transactions }))
+      .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
+  }
 );
