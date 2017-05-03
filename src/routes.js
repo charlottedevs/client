@@ -5,6 +5,7 @@ import ProtectedRoute from './containers/ProtectedRoute';
 import ChallengesContainer from './containers/ChallengesContainer';
 import LeaderboardContainer from './containers/LeaderboardContainer';
 import AccountContainer from './containers/AccountContainer';
+import SettingsContainer from './containers/SettingsContainer';
 import Layout from './Layout';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -16,7 +17,8 @@ const Routes = () => (
       <Switch>
         <Route path="/login" component={Login} />
 
-        <ProtectedRoute path="/account" component={AccountContainer} />
+        <ProtectedRoute path="/users/:user_id" component={AccountContainer} />
+        <ProtectedRoute path="/settings" component={SettingsContainer} />
         <ProtectedRoute path="/challenges" component={ChallengesContainer} />
         <ProtectedRoute path="/leaderboard" component={LeaderboardContainer} />
 

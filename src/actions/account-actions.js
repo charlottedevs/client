@@ -7,6 +7,8 @@ import {
   FETCH_ACCOUNT,
   UPDATE_ACCOUNT,
   UPDATE_FIELD,
+  FETCH_CRED_TRANSACTIONS,
+  FETCH_SETTINGS,
 } from './action-types';
 
 export const createSession = (googleOauthJWT) => {
@@ -30,19 +32,26 @@ export const destroySession = () => {
   return ({ type: DESTROY_SESSION });
 };
 
-export const fetchAccount = () => (
+export const fetchAccount = userId => (
   (dispatch) => {
-    axios.get('/user')
+    axios.get(userId ? `/users/${userId}` : '/settings')
       .then(response => dispatch({ type: FETCH_ACCOUNT, payload: response.data.user }))
       .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
   }
 );
 
+export const fetchSettings = () => (
+  (dispatch) => {
+    axios.get('/settings')
+      .then(response => dispatch({ type: FETCH_SETTINGS, payload: response.data.user }))
+      .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
+  }
+);
+
 export const updateAccount = (params) => {
-  const accountUrl = '/user';
   const requestConfig = {
     method: 'put',
-    url: accountUrl,
+    url: '/settings',
     data: { user: params },
   };
 
@@ -55,4 +64,13 @@ export const updateAccount = (params) => {
 
 export const updateField = (key, target) => (
   { type: UPDATE_FIELD, payload: { key, target } }
+);
+
+export const fetchCredTransactions = userId => (
+  (dispatch) => {
+    axios.get(`/users/${userId}/cred_transactions`)
+      .then(response =>
+        dispatch({ type: FETCH_CRED_TRANSACTIONS, payload: response.data.cred_transactions }))
+      .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
+  }
 );

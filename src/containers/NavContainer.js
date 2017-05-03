@@ -25,19 +25,25 @@ const NavContainer = props => (
             </li>
             {
               props.isAuthenticated &&
-              <li className="nav-item">
-                <Link to="/account" className="accountLink">
-                  <Avatar picture={props.picture} credibility={props.credibility} />
-                </Link>
-              </li>
+                <div>
+                  <li className="nav-item">
+                    <Link to="/settings" className="accountLink">
+                      <Avatar picture={props.picture} credibility={props.credibility} />
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link to={`/users/${window.localStorage.getItem('id')}`}>Account</Link>
+                  </li>
+                </div>
             }
             <li className="nav-item">
               {
                 props.isAuthenticated ?
                   <button className="btn btn-primary" onClick={() => props.destroySession()}>
-                  Sign Out
-                </button>
-                :
+                    Sign Out
+                  </button>
+                  :
                   <button className="btn btn-primary"><Link to="/login">Sign In</Link></button>
               }
             </li>

@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Standing = ({ standing, rank }) => (
   <div className="list-group-item">
     <p className="rank">{rank}</p>
-    <img src={standing.picture} alt="avatar" className="avatar" />
+    <Link to={`/users/${standing.id}`}>
+      <img src={standing.picture} alt="avatar" className="avatar" />
+    </Link>
     <p>{standing.first_name}</p>
     <p>{standing.last_name}</p>
     <p className="credits">{standing.credibility}</p>
