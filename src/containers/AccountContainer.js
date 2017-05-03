@@ -21,14 +21,14 @@ class AccountContainer extends Component {
         ) : (
           <div>
             <div className="jumbotron accountJumbo">
-              <h2>Account</h2>
-            </div>
-            <div className="row justify-content-md-center">
-              <div className="col-md-8">
-                <AccountCard account={this.props.account} />
-              </div>
+              <h2>Account Overview</h2>
             </div>
             <div className="container ">
+              <div className="row justify-content-md-center">
+                <div className="col-md-8">
+                  <AccountCard account={this.props.account} />
+                </div>
+              </div>
               <CredTransactionsContainer userId={this.props.match.params.user_id} />
             </div>
           </div>

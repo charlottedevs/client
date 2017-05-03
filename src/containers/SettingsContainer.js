@@ -14,7 +14,7 @@ class SettingsContainer extends Component {
     return (
       <div>
         <div className="jumbotron accountJumbo">
-          <h2>Settings</h2>
+          <h2>Account Settings</h2>
         </div>
         <div className="container ">
           <Settings
@@ -47,7 +47,6 @@ SettingsContainer.propTypes = {
     twitter_handle: React.PropTypes.string,
   }).isRequired,
 };
-
 
 function mapStateToProps(state) {
   return {

@@ -34,23 +34,19 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
   };
 
   return (
-    <div className={'Account'}>
-      <div className="container">
+    <div className="row justify-content-md-center">
+      <div className="col-md-8">
         <div className="settingsCard card">
-          <h1>
-            Account Settings
-          </h1>
-
           {
             isUpdate && <span>Updated successfully</span>
           }
 
           <Form horizontal>
             <FormGroup controlId="formHorizontalResumeSiteUrl">
-              <Col componentClass={ControlLabel} sm={10} md={6}>
+              <Col componentClass={ControlLabel} sm={10} md={12}>
                 Resume Site Url
               </Col>
-              <Col sm={10} md={6}>
+              <Col sm={10} md={12}>
                 <FormControl
                   type="text"
                   onChange={e => handleChange('resume_site_url', e)}
@@ -61,10 +57,10 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
             </FormGroup>
 
             <FormGroup controlId="formHorizontalLinkedInUrl">
-              <Col componentClass={ControlLabel} sm={10} md={6}>
+              <Col componentClass={ControlLabel} sm={10} md={12}>
                 LinkedIn Profile Url
               </Col>
-              <Col sm={10} md={6}>
+              <Col sm={10} md={12}>
                 <FormControl
                   type="text"
                   placeholder="https://linkedin.com/in/..."
@@ -75,10 +71,10 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
             </FormGroup>
 
             <FormGroup controlId="formHorizontalStackOverflowUrl">
-              <Col componentClass={ControlLabel} sm={10} md={6}>
+              <Col componentClass={ControlLabel} sm={10} md={12}>
                 Stack Overflow Profile Url
               </Col>
-              <Col sm={10} md={6}>
+              <Col sm={10} md={12}>
                 <FormControl
                   type="text"
                   placeholder="https://stackoverflow.com/users/..."
@@ -89,10 +85,10 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
             </FormGroup>
 
             <FormGroup controlId="formHorizontalTwitterHandle">
-              <Col componentClass={ControlLabel} sm={10} md={6}>
+              <Col componentClass={ControlLabel} sm={10} md={12}>
                 Twitter Handle
               </Col>
-              <Col sm={10} md={6}>
+              <Col sm={10} md={12}>
                 <FormControl
                   type="text"
                   placeholder="your twitter @handle"
@@ -103,10 +99,10 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
             </FormGroup>
 
             <FormGroup controlId="formHorizontalGithubHandle">
-              <Col componentClass={ControlLabel} sm={10} md={6}>
+              <Col componentClass={ControlLabel} sm={10} md={12}>
                 GitHub Handle
               </Col>
-              <Col sm={10} md={6}>
+              <Col sm={10} md={12}>
                 <FormControl
                   type="text"
                   placeholder="your github @handle"
@@ -117,10 +113,10 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
             </FormGroup>
 
             <FormGroup controlId="formHorizontalCodewarsHandle">
-              <Col componentClass={ControlLabel} sm={10} md={6}>
+              <Col componentClass={ControlLabel} sm={10} md={12}>
                 Codewars Handle
               </Col>
-              <Col sm={10} md={6}>
+              <Col sm={10} md={12}>
                 <FormControl
                   type="text"
                   placeholder="your codewars @handle"
@@ -134,7 +130,7 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
               <Col smOffset={2} sm={10}>
                 <Button
                   onClick={() => handleSubmit()}
-                  className="btn-secondary"
+                  className="btn-primary"
                 >
                   Save
                 </Button>

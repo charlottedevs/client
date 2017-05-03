@@ -18,9 +18,11 @@ class LeaderboardContainer extends Component {
         <div className="jumbotron leaderboardJumbo">
           <h2>Leaderboard</h2>
         </div>
-        <div className="row justify-content-md-center">
-          <div className="col-md-8 ">
-            <Standings standings={standings} />
+        <div className="container">
+          <div className="row justify-content-md-center">
+            <div className="col-md-8">
+              <Standings standings={standings} />
+            </div>
           </div>
         </div>
       </div>
