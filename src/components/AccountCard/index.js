@@ -1,19 +1,25 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
+const isCurrentAccount = account => (
+  account.id && account.id.toString() === window.localStorage.getItem('id')
+);
 const AccountCard = ({ account }) => (
   <div className="card accountCard">
     <div className="row">
       <div className="col-md-6 userInfo">
         <img src={account.picture} alt="avatar" className="accountAvatar" />
         <h2>{account.first_name} {account.last_name}</h2>
-        <Button
-          bsStyle="primary"
-          className="btn btn-secondary"
-          href="/settings"
-        >
-          Settings
-        </Button>
+        {
+          isCurrentAccount(account) &&
+          <Button
+            bsStyle="primary"
+            className="btn btn-secondary"
+            href="/settings"
+          >
+            Settings
+          </Button>
+        }
       </div>
       <div className="col-md-6 accountInfo">
         <p className="credibility">{account.credibility}<span className="uom">pts</span></p>
@@ -24,7 +30,6 @@ const AccountCard = ({ account }) => (
         <p >Twitter: <a href={account.twitter_handle}>{account.twitter_handle}</a></p>
       </div>
     </div>
-
   </div>
 );
 

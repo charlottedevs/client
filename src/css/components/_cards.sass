@@ -105,3 +105,23 @@
       margin: 0px auto 20px auto
     h2
       margin-bottom: 20px
+
+.transactionCard
+  min-height: 100px
+  padding: 40px
+  h2
+    text-transform: capitalize
+  .delta_positive
+    color: $teal
+    &::before
+      content: '+'
+      color: $teal
+  .delta_negative
+    color: $pink
+  .credibility
+
+    font-size: 28px
+    text-align: right
+  .uom
+    color: $white
+    font-size: 18px

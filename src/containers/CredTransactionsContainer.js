@@ -12,7 +12,7 @@ class CredTransactionsContainer extends Component {
 
   render() {
     return (
-      <div className="container ">
+      <div>
         <CredTransactionsList
           credTransactions={this.props.credTransactions}
         />
