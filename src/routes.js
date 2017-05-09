@@ -6,6 +6,7 @@ import ChallengesContainer from './containers/ChallengesContainer';
 import LeaderboardContainer from './containers/LeaderboardContainer';
 import AccountContainer from './containers/AccountContainer';
 import SettingsContainer from './containers/SettingsContainer';
+import MeetupCheckinContainer from './containers/MeetupCheckinContainer';
 import Layout from './Layout';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -18,6 +19,7 @@ const Routes = () => (
         <Route path="/login" component={Login} />
 
         <ProtectedRoute path="/users/:user_id" component={AccountContainer} />
+        <ProtectedRoute path="/checkin" component={MeetupCheckinContainer} />
         <ProtectedRoute path="/settings" component={SettingsContainer} />
         <ProtectedRoute path="/challenges" component={ChallengesContainer} />
         <ProtectedRoute path="/leaderboard" component={LeaderboardContainer} />
