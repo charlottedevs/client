@@ -29,7 +29,7 @@ class Login extends Component {
               <h3>Please log in</h3>
               <GoogleLogin
                 className="btn btn-primary"
-                clientId={process.env.GOOGLE_CLIENT_ID}
+                clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                 buttonText="Login"
                 onSuccess={this.handleGoogleResponse}
                 onFailure={this.handleGoogleResponse}

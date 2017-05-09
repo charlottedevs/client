@@ -21,8 +21,6 @@ function getClientEnvironment(publicUrl) {
       // This should only be used as an escape hatch. Normally you would put
       // images into the `src` and `import` them in code to get their paths.
       'PUBLIC_URL': publicUrl,
-      'API_URL': process.env.API_URL,
-      'GOOGLE_CLIENT_ID': process.env.GOOGLE_CLIENT_ID
     });
   // Stringify all values so we can feed into Webpack DefinePlugin
   var stringified = {
