@@ -15,7 +15,7 @@ const Challenge = ({ challenge }) => (
         <Button
           bsStyle="primary"
           className="btn btn-secondary"
-          href={challenge.url}
+          href={challenge.html_url}
           target="_blank"
         >
           More Info
