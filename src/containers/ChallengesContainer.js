@@ -7,7 +7,6 @@ import ReposList from '../components/ReposList';
 class ChallengesContainer extends Component {
   componentDidMount() {
     if (this.props.isAuthenticated) {
-      this.props.fetchChallenges('');
       this.props.fetchRepos();
     }
   }
@@ -23,9 +22,15 @@ class ChallengesContainer extends Component {
           <h2>Challenges</h2>
           <ReposList repos={repos} changeRepo={changeRepo} />
         </div>
-        <div className="container challengesContainer">
-          <ChallengesList challenges={challenges} />
-        </div>
+        {
+          challenges.length > 0 ? (
+            <div className="container challengesContainer">
+              <ChallengesList challenges={challenges} />
+            </div>
+          ) : (
+            <h3 style={{ textAlign: 'center' }}>Click on a repo above to start!</h3>
+          )
+        }
       </div>
     );
   }
@@ -33,7 +38,6 @@ class ChallengesContainer extends Component {
 
 ChallengesContainer.propTypes = {
   challenges: React.PropTypes.arrayOf(React.PropTypes.shape),
-  fetchChallenges: React.PropTypes.func.isRequired,
   fetchRepos: React.PropTypes.func.isRequired,
   isAuthenticated: React.PropTypes.bool.isRequired,
   changeRepo: React.PropTypes.func.isRequired,

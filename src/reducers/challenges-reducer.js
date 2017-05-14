@@ -2,7 +2,6 @@ import * as types from '../actions/action-types';
 
 const INITIAL_STATE = {
   challenges: [],
-  selectedChallenge: {},
 };
 
 export default (state = INITIAL_STATE, action) => {
