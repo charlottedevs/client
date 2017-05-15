@@ -1,5 +1,5 @@
 import axios from 'axios';
-import './common';
+import './jwt';
 import {
   FETCH_CHALLENGES,
   FETCH_REPOS,
