@@ -1,5 +1,5 @@
 import axios from 'axios';
-import './common';
+import './jwt';
 import {
   CREATE_SESSION,
   NETWORK_ERROR,
@@ -12,12 +12,11 @@ import {
 } from './action-types';
 
 export const createSession = (googleOauthJWT) => {
+  window.localStorage.setItem('auth_token', googleOauthJWT);
   const sessionUrl = '/session';
-  const authHeaders = { Authorization: `Bearer ${googleOauthJWT}` };
   const requestConfig = {
     method: 'post',
     url: sessionUrl,
-    headers: authHeaders,
   };
 
   return (dispatch) => {
