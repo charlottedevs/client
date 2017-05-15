@@ -1,9 +1,9 @@
 import * as types from '../actions/action-types';
 
-const tokenExists = () => 'auth_token' in window.localStorage;
+const isAuthenticated = () => 'picture' in window.localStorage;
 
 const INITIAL_STATE = {
-  isAuthenticated: tokenExists(),
+  isAuthenticated: isAuthenticated(),
   picture: window.localStorage.getItem('picture') || '',
   credibility: window.localStorage.getItem('credibility') || '',
   account: {
@@ -32,7 +32,7 @@ const createSession = (info, state) => {
   return {
     ...state,
     ...info,
-    isAuthenticated: tokenExists(),
+    isAuthenticated: isAuthenticated(),
   };
 };
 
