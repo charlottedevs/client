@@ -26,13 +26,13 @@ const NavContainer = props => (
             {
               props.isAuthenticated &&
                 <li className="nav-item">
-                  <Link to={`/users/${window.localStorage.getItem('id')}`}>Account</Link>
+                  <Link to="/settings">Account</Link>
                 </li>
             }
             {
               props.isAuthenticated &&
                 <li className="nav-item">
-                  <Link to="/settings" className="accountLink">
+                  <Link to={`/users/${window.localStorage.getItem('id')}`} className="accountLink">
                     <Avatar picture={props.picture} credibility={props.credibility} />
                   </Link>
                 </li>

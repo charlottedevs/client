@@ -1,9 +1,9 @@
 import * as types from '../actions/action-types';
 
-const tokenExists = () => 'auth_token' in window.localStorage;
+const isAuthenticated = () => 'picture' in window.localStorage;
 
 const INITIAL_STATE = {
-  isAuthenticated: tokenExists(),
+  isAuthenticated: isAuthenticated(),
   picture: window.localStorage.getItem('picture') || '',
   credibility: window.localStorage.getItem('credibility') || '',
   account: {
@@ -32,8 +32,13 @@ const createSession = (info, state) => {
   return {
     ...state,
     ...info,
-    isAuthenticated: tokenExists(),
+    isAuthenticated: isAuthenticated(),
   };
+};
+
+const destroySesion = () => {
+  window.localStorage.clear();
+  return { ...INITIAL_STATE, isAuthenticated: false };
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -41,7 +46,7 @@ export default (state = INITIAL_STATE, action) => {
     case types.CREATE_SESSION:
       return createSession(action.payload, state);
     case types.DESTROY_SESSION:
-      return INITIAL_STATE;
+      return destroySesion();
     case types.FETCH_ACCOUNT:
       return { ...state, account: action.payload, successfulUpdate: false, responseStatus: 200 };
     case types.UPDATE_FIELD:
