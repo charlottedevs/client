@@ -1,15 +1,18 @@
 import React, { PropTypes } from 'react';
+import MasonryLayout from 'react-masonry-layout';
 import Challenge from './Challenge';
 
+
 const ChallengesList = ({ challenges }) => (
-  <div className="row">
+  <MasonryLayout id="challenges" >
     {challenges.map(challenge =>
       <Challenge
         key={challenge.id}
         challenge={challenge}
       />,
-      )}
-  </div>
+  )}
+
+  </MasonryLayout>
   );
 
 ChallengesList.propTypes = {
