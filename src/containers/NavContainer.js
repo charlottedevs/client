@@ -44,7 +44,9 @@ const NavContainer = props => (
                     Sign Out
                   </button>
                   :
-                  <button className="btn btn-primary"><Link to="/login">Sign In</Link></button>
+                  <form action="/login">
+                    <button className="btn btn-primary">Sign In</button>
+                  </form>
               }
             </li>
           </ul>
