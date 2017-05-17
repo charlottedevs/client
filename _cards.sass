@@ -1,0 +1,128 @@
+.card
+  background-color: $dark-blue
+  margin-bottom: 20px
+  min-height: 300px
+  text-align: left
+  color: $white
+  border: none
+  border-radius: 0px
+  box-shadow: 0px 4px 10px #888888
+  padding: 10px
+  margin-left: auto
+  margin-right: auto
+  // min-height: 400px
+  // max-height: 400px
+  overflow-y: scroll
+  .card-block
+    p
+      font-weight: 300
+    pre
+      background-color: $white
+      padding: 10px
+
+  .btn
+    font-weight: 700
+  .card-footer
+    background-color: $dark-blue
+    border-radius: 0px
+  .card-header
+    background-color: $dark-blue
+    padding-bottom: 0px
+    margin-bottom: 0px
+    h3
+      color: $teal
+      font-weight: 700
+    .points
+      font-size: 60px
+      font-weight: 700
+      margin-bottom: 10px
+      line-height: 1
+      span
+        font-size: 20px
+        font-weight: 300
+
+.settingsCard
+  width: 100%
+  max-width: none
+  margin-bottom: 60px
+  h2
+    color: $white
+
+.loginCard
+  min-height: 100px
+  height: 180px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: 40px
+
+.leaderboardCard
+  width: 100%
+  max-width: none
+  padding: 0px
+  .list-group
+    .list-group-item
+      background-color: rgba(0, 0, 0, 0)
+      border-color: lighten($dark-blue, 5%)
+      border-left: none
+      border-right: none
+      display: flex
+      align-items: center
+      p
+        margin-bottom: 0px
+        text-transform: capitalize
+      .avatar
+        border-radius: 50%
+        width: 50px
+        margin: 0px 10px
+      .rank
+        font-size: 30px
+        margin-right: 20px
+      .credits
+        margin-left: auto
+        font-weight: bold
+        color: $teal
+        font-size: 30px
+
+.accountCard
+  padding: 40px
+  width: 100%
+  .accountInfo
+    .credibility
+      color: $teal
+      font-size: 40px
+      text-align: right
+    .uom
+      font-size: 20px
+      color: $white
+  .userInfo
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-content: center
+    align-items: center
+    .accountAvatar
+      border-radius: 50%
+      margin: 0px auto 20px auto
+    h2
+      margin-bottom: 20px
+
+.transactionCard
+  min-height: 100px
+  padding: 40px
+  h2
+    text-transform: capitalize
+  .delta_positive
+    color: $teal
+    &::before
+      content: '+'
+      color: $teal
+  .delta_negative
+    color: $pink
+  .credibility
+
+    font-size: 28px
+    text-align: right
+  .uom
+    color: $white
+    font-size: 18px
