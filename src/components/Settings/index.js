@@ -10,7 +10,7 @@ import {
 
 const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
   const resumeSiteUrl = account.resume_site_url;
-  const linkedinUrl = account.linked_in_url;
+  const linkedinUrl = account.linkedin_url;
   const stackoverflowUrl = account.stackoverflow_url;
   const twitterHandle = account.twitter_handle;
   const githubHandle = account.github_handle;
