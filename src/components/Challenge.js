@@ -4,9 +4,24 @@ import ReactMarkdown from 'react-markdown';
 
 const Challenge = ({ challenge }) => (
   <div className="col-md-6">
-    <div className="card">
+    <div className="card challengeCard">
       <div className="card-header">
         <h3>{challenge.title}</h3>
+        <ul className="labels_list">
+          {challenge.labels.map(label => (
+            <li
+              className="label"
+              key={label.id}
+              style={{ backgroundColor: `#${label.color}` }}
+            >
+              {label.name}
+            </li>
+          ))}
+        </ul>
+        <p>
+          <span>{challenge.comments}</span>&nbsp;
+          {challenge.comments === 1 ? 'comment' : 'comments'}
+        </p>
       </div>
       <div className="card-block">
         <ReactMarkdown source={challenge.body} />
