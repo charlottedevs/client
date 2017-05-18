@@ -7,6 +7,10 @@ const Challenge = ({ challenge }) => (
     <div className="card">
       <div className="card-header">
         <h3>{challenge.title}</h3>
+        <p>
+          <span>{challenge.comments}</span>&nbsp;
+          {challenge.comments === 1 ? 'comment' : 'comments'}
+        </p>
       </div>
       <div className="card-block">
         <ReactMarkdown source={challenge.body} />
