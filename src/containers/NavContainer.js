@@ -29,6 +29,16 @@ const NavContainer = props => (
                   <Link to="/settings">Account</Link>
                 </li>
             }
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                href="//faq.charlottejuniordevs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                FAQ
+              </a>
+            </li>
             {
               props.isAuthenticated &&
                 <li className="nav-item">
