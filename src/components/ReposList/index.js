@@ -8,6 +8,7 @@ const ReposList = ({ repos, changeRepo }) => (
         key={repo.path}
         repo={repo.name}
         repoPath={repo.path}
+        repoIssues={repo.open_issues_count}
         changeRepo={changeRepo}
       />,
       )}
