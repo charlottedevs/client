@@ -32,7 +32,7 @@ const NavContainer = props => (
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="//faq.charlottejuniordevs.com"
+                href="//charlottejuniordevs.github.io/faq"
                 target="_blank"
                 rel="noopener noreferrer"
               >
