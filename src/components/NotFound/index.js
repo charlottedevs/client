@@ -7,7 +7,6 @@ const NotFound = () => (
     <h1 className={'Line'}>But seriously, it is.</h1>
     <p>Or is it..?</p>
     <h1 className={'Line2'}>Really, though, there&#39;s nothing here.</h1>
-    <div className={'Space'} />
   </div>
 );
 
