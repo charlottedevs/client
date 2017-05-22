@@ -10,7 +10,7 @@ import {
 
 const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
   const resumeSiteUrl = account.resume_site_url;
-  const linkedinUrl = account.linked_in_url;
+  const linkedinUrl = account.linkedin_url;
   const stackoverflowUrl = account.stackoverflow_url;
   const twitterHandle = account.twitter_handle;
   const githubHandle = account.github_handle;
@@ -91,7 +91,7 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
               <Col sm={10} md={12}>
                 <FormControl
                   type="text"
-                  placeholder="your twitter @handle"
+                  placeholder="your twitter handle"
                   value={twitterHandle}
                   onChange={e => handleChange('twitter_handle', e)}
                 />
@@ -105,7 +105,7 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
               <Col sm={10} md={12}>
                 <FormControl
                   type="text"
-                  placeholder="your github @handle"
+                  placeholder="your github handle"
                   value={githubHandle}
                   onChange={e => handleChange('github_handle', e)}
                 />
@@ -119,7 +119,7 @@ const Settings = ({ account, updateField, updateAccount, isUpdate }) => {
               <Col sm={10} md={12}>
                 <FormControl
                   type="text"
-                  placeholder="your codewars @handle"
+                  placeholder="your codewars handle"
                   value={codewarsHandle}
                   onChange={e => handleChange('codewars_handle', e)}
                 />
