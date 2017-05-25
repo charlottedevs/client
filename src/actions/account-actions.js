@@ -21,8 +21,12 @@ export const createSession = (googleOauthJWT) => {
 
   return (dispatch) => {
     axios(requestConfig)
-      .then(response => dispatch({ type: CREATE_SESSION, payload: response.data.user_info }))
-      .catch(error => dispatch({ type: NETWORK_ERROR, payload: error }));
+      .then((response) => {
+        dispatch({ type: CREATE_SESSION, payload: response.data.user_info });
+      })
+      .catch((error) => {
+        dispatch({ type: NETWORK_ERROR, payload: error });
+      });
   };
 };
 
