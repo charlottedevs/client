@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Route,
@@ -15,7 +16,7 @@ const ProtectedRoute = (props) => {
 
 
 ProtectedRoute.propTypes = {
-  isAuthenticated: React.PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
 };
 
 function mapStateToProps(state) {
