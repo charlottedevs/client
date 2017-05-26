@@ -1,9 +1,10 @@
 import React from 'react';
+import moment from 'moment';
 
 const CredTransaction = ({ credTransaction }) => (
   <div className="col-md-8">
     <div className="card transactionCard">
-      <p>{credTransaction.timestamp}</p>
+      <p>{moment(credTransaction.timestamp).format('LLLL')}</p>
       <h2>{credTransaction.action}</h2>
       <p className={`credibility delta_${credTransaction.delta_type}`}>{credTransaction.delta}<span className="uom">pts</span></p>
 
