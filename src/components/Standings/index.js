@@ -8,7 +8,7 @@ const StandingsList = ({ standings }) => (
         <Standing
           key={standing.id}
           standing={standing}
-          rank={index + 1}
+          rank={index + 1} 
         />,
       )}
     </div>
