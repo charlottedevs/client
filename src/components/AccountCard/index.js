@@ -26,7 +26,10 @@ const AccountCard = ({ account }) => (
         <p >Github: <a href={`https://github.com/${account.github_handle}`} rel="noopener noreferrer" target="_blank">{account.github_handle}</a></p>
         <p >LinkedIn: <a href={`https://www.linkedin.com/in/${account.linkedin_url}/`}>{account.linkedin_url}</a></p>
         <p >Resume Site: <a href={account.resume_site_url}>{account.resume_site_url}</a></p>
-        <p >StackOverflow: <a href={account.stackoverflow_url}>{account.stackoverflow_url}</a></p>
+        <p >StackOverflow: <a href={account.stackoverflow_url}>{account.stackoverflow_url
+          .substring(
+            account.stackoverflow_url.lastIndexOf('/') + 1,
+          )}</a></p>
         <p >Twitter: <a href={`https://twitter.com/${account.twitter_handle}`}>{account.twitter_handle}</a></p>
       </div>
     </div>
